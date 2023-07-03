@@ -1,0 +1,14 @@
+x-veld:
+    veld_service:
+        input:
+            path: "/veld/input/data.json"
+            type: "json"
+        output:
+            path: "/veld/output/data.xml"
+            type: "xml"
+
+services:
+    veld_service:
+        build: .
+        volumes:
+            - ./:/veld/service/

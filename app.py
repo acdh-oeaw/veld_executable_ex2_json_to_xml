@@ -1,10 +1,11 @@
 import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
 import json
+import os
 
 
-file_path_input = "/veld/input/data.json"
-file_path_output = "/veld/output/data.xml"
+folder_path_input = "/veld/input/"
+folder_path_output = "/veld/output/"
 
 
 def dict_to_xml(d, node_current=None):
@@ -24,14 +25,16 @@ def dict_to_xml(d, node_current=None):
     return node_current
 
 
-try:
+for file_name in os.listdir(folder_path_input):
+    file_path_input = folder_path_input + file_name
+    print(f"file_path_input: {file_path_input}")
     with open(file_path_input, "r") as fi:
         d = json.load(fi)
-        print(d)
-except:
-    print("file not found")
-else:
-    xml_root = dict_to_xml(d)
-    xml_str = minidom.parseString(ET.tostring(xml_root)).toprettyxml(indent="  ")
-    with open(file_path_output, "w") as fo:
-        fo.write(xml_str)
+        print(f"d: {d}")
+        xml_root = dict_to_xml(d)
+        xml_str = minidom.parseString(ET.tostring(xml_root)).toprettyxml(indent="  ")
+        print(f"xml_str: {xml_str}")
+        file_path_output = folder_path_output + file_name
+        print(f"file_path_output: {file_path_output}")
+        with open(file_path_output, "w") as fo:
+            fo.write(xml_str)

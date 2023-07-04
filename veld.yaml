@@ -1,5 +1,5 @@
 x-veld:
-    veld_service:
+    veld_executable:
         input:
             path: "/veld/input/data.json"
             type: "json"
@@ -8,7 +8,7 @@ x-veld:
             type: "xml"
 
 services:
-    veld_service:
+    veld:
         build: .
         volumes:
             - ./:/veld/service/

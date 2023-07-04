@@ -1,10 +1,10 @@
 x-veld:
     veld_executable:
         input:
-            path: "/veld/input/data.json"
+            path: "/veld/input/"
             type: "json"
         output:
-            path: "/veld/output/data.xml"
+            path: "/veld/output/"
             type: "xml"
 
 services:

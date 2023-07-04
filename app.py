@@ -34,7 +34,7 @@ for file_name in os.listdir(folder_path_input):
         xml_root = dict_to_xml(d)
         xml_str = minidom.parseString(ET.tostring(xml_root)).toprettyxml(indent="  ")
         print(f"xml_str: {xml_str}")
-        file_path_output = folder_path_output + file_name
+        file_path_output = folder_path_output + file_name.replace(".json", ".xml")
         print(f"file_path_output: {file_path_output}")
         with open(file_path_output, "w") as fo:
             fo.write(xml_str)

@@ -1,3 +1,3 @@
-FROM python:3.8.16-bullseye
+FROM python:3.10
 
 CMD ["python", "/veld/service/app.py"]

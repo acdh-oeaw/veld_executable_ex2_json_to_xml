@@ -1,14 +1,20 @@
 x-veld:
-    veld_executable:
-        input:
-            path: "/veld/input/"
-            type: "json"
-        output:
-            path: "/veld/output/"
-            type: "xml"
+  executable:
+    about:
+      description: "testing"
+      scope: "testing"
+    input:
+      path: /veld/input/
+      format: "json"
+      kind: "dummy data"
+    output:
+      path: /veld/output/
+      format: "xml"
+      kind: "dummy data"
 
 services:
-    veld:
-        build: .
-        volumes:
-            - ./:/veld/service/
+  veld:
+    build: .
+    volumes:
+      - ./src/:/veld/executable/
+

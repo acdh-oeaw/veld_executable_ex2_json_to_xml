@@ -17,4 +17,5 @@ services:
     build: .
     volumes:
       - ./src/:/veld/executable/
+    command: python /veld/executable/app.py
 

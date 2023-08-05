@@ -26,14 +26,14 @@ def dict_to_xml(d, node_current=None):
 
 
 if __name__ == "__main__":
-    print(f"loading from: {file_path_input}")
+    print("loading from:", file_path_input)
     with open(file_path_input, "r") as fi:
         d = json.load(fi)
-        print(f"d: {d}")
+        print("d:", d)
         xml_content = dict_to_xml(d)
         xml_str = minidom.parseString(ET.tostring(xml_content)).toprettyxml(indent="  ")
-        print(f"xml_str: {xml_str}")
-        print(f"writing to: {file_path_output}")
+        print("xml_str", xml_str)
+        print("writing to", file_path_output)
         with open(file_path_output, "w") as fo:
             fo.write(xml_str)
 

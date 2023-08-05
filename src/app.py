@@ -1,7 +1,6 @@
 import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
 import json
-import os
 
 
 file_path_input = "/veld/input/in.json"

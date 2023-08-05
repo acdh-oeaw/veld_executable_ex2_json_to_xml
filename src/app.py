@@ -28,10 +28,12 @@ if __name__ == "__main__":
     print("loading from:", file_path_input)
     with open(file_path_input, "r") as fi:
         d = json.load(fi)
-        print("d:", d)
+        print("original json data:")
+        print(d)
         xml_content = dict_to_xml(d)
         xml_str = minidom.parseString(ET.tostring(xml_content)).toprettyxml(indent="  ")
-        print("xml_str", xml_str)
+        print("converted xml data:")
+        print(xml_str)
         print("writing to", file_path_output)
         with open(file_path_output, "w") as fo:
             fo.write(xml_str)

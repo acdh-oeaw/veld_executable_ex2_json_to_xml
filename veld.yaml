@@ -1,16 +1,13 @@
 x-veld:
   executable:
     about:
-      description: "testing"
-      scope: "testing"
+      description: "dummy veld for testing and showcasing"
     input:
-      path: /veld/input/
+      path: /veld/input/in.json
       format: "json"
-      kind: "dummy data"
     output:
-      path: /veld/output/
+      path: /veld/output/out.xml
       format: "xml"
-      kind: "dummy data"
 
 services:
   veld:

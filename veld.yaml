@@ -3,7 +3,7 @@ x-veld:
     about:
       description: "dummy veld for testing and showcasing"
     input:
-      path: /veld/input/in.json
+      path: /veld/input/data.json
       format: "json"
     output:
       path: /veld/output/out.xml

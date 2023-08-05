@@ -3,7 +3,7 @@ import xml.dom.minidom as minidom
 import json
 
 
-file_path_input = "/veld/input/in.json"
+file_path_input = "/veld/input/data.json"
 file_path_output = "/veld/output/out.xml"
 
 

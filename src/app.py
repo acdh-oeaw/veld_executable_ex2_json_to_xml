@@ -4,8 +4,8 @@ import json
 import os
 
 
-folder_path_input = "/veld/input/"
-folder_path_output = "/veld/output/"
+file_path_input = "/veld/input/in.json"
+file_path_output = "/veld/output/out.xml"
 
 
 def dict_to_xml(d, node_current=None):
@@ -25,16 +25,15 @@ def dict_to_xml(d, node_current=None):
     return node_current
 
 
-for file_name in os.listdir(folder_path_input):
-    file_path_input = folder_path_input + file_name
-    print(f"file_path_input: {file_path_input}")
+if __name__ == "__main__":
+    print(f"loading from: {file_path_input}")
     with open(file_path_input, "r") as fi:
         d = json.load(fi)
         print(f"d: {d}")
-        xml_root = dict_to_xml(d)
-        xml_str = minidom.parseString(ET.tostring(xml_root)).toprettyxml(indent="  ")
+        xml_content = dict_to_xml(d)
+        xml_str = minidom.parseString(ET.tostring(xml_content)).toprettyxml(indent="  ")
         print(f"xml_str: {xml_str}")
-        file_path_output = folder_path_output + file_name.replace(".json", ".xml")
-        print(f"file_path_output: {file_path_output}")
+        print(f"writing to: {file_path_output}")
         with open(file_path_output, "w") as fo:
             fo.write(xml_str)
+

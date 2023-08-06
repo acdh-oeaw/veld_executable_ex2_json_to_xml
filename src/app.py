@@ -4,7 +4,7 @@ import json
 
 
 file_path_input = "/veld/input/data.json"
-file_path_output = "/veld/output/out.xml"
+file_path_output = "/veld/output/data.xml"
 
 
 def dict_to_xml(d, node_current=None):

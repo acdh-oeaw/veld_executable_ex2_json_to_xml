@@ -7,7 +7,7 @@ x-veld:
       format: "json"
       kind: "dummy data"
     output:
-      path: /veld/output/out.xml
+      path: /veld/output/data.xml
       format: "xml"
       kind: "dummy data"
 

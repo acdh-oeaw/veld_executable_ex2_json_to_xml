@@ -5,9 +5,11 @@ x-veld:
     input:
       path: /veld/input/data.json
       format: "json"
+      kind: "dummy data"
     output:
       path: /veld/output/out.xml
       format: "xml"
+      kind: "dummy data"
 
 services:
   veld:

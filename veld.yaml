@@ -2,6 +2,7 @@ x-veld:
   executable:
     about:
       description: "example veld for testing and showcasing"
+    topics: "ETL"
     input:
       type: "files"
       format: "json"

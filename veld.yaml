@@ -15,6 +15,6 @@ services:
   veld:
     build: .
     volumes:
-      - ./src/:/veld/executable/
-    command: python /veld/executable/app.py
+      - ./convert.py:/veld/executable/convert.py
+    command: python /veld/executable/convert.py
 

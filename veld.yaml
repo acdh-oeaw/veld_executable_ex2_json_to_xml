@@ -1,15 +1,17 @@
 x-veld:
   executable:
     about:
-      description: "dummy veld for testing and showcasing"
+      description: "example veld for testing and showcasing"
     input:
-      path: /veld/input/data.json
+      type: "files"
       format: "json"
-      kind: "dummy data"
+      content: "dummy data"
+      path: /veld/input/data.json
     output:
-      path: /veld/output/data.xml
+      type: "files"
       format: "xml"
-      kind: "dummy data"
+      content: "dummy data"
+      path: /veld/output/data.xml
 
 services:
   veld:

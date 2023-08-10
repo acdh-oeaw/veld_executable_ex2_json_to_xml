@@ -2,11 +2,13 @@ x-veld:
   executable:
     about:
       description: "example veld for testing and showcasing"
-    topics: "ETL"
+      topics: "ETL"
     input:
       type: "files"
       format: "json"
       content: "dummy data"
+      # The folders inside an executable could be anything you want. But is is recommended to stick
+      # to /veld/input, etc. for consistency
       path: /veld/input/data.json
     output:
       type: "files"

@@ -1,10 +1,11 @@
 import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
 import json
+from prefect import flow
 
 
-file_path_input = "/veld/input/data.json"
-file_path_output = "/veld/output/data.xml"
+file_path_input = "../veld_data_ex1_json/data.json"
+file_path_output = "../veld_data_ex2_xml/data.xml"
 
 
 def dict_to_xml(d, node_current=None):
@@ -24,7 +25,8 @@ def dict_to_xml(d, node_current=None):
     return node_current
 
 
-if __name__ == "__main__":
+@flow(name="veld_executable_ex2_json_to_xml__yaml", log_prints=True)
+def convert():
     print("loading from:", file_path_input)
     with open(file_path_input, "r") as fi:
         d = json.load(fi)
@@ -37,4 +39,8 @@ if __name__ == "__main__":
         print("writing to", file_path_output)
         with open(file_path_output, "w") as fo:
             fo.write(xml_str)
+
+
+if __name__ == "__main__":
+    convert()
 

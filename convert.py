@@ -4,8 +4,8 @@ import json
 from prefect import flow
 
 
-file_path_input = "../veld_data_ex1_json/data.json"
-file_path_output = "../veld_data_ex2_xml/data.xml"
+file_path_input = "./veld_data_ex1_json/data.json"
+file_path_output = "./veld_data_ex2_xml/data.xml"
 
 
 def dict_to_xml(d, node_current=None):
@@ -25,7 +25,7 @@ def dict_to_xml(d, node_current=None):
     return node_current
 
 
-@flow(name="veld_executable_ex2_json_to_xml__yaml", log_prints=True)
+@flow(name="veld_executable_ex2_json_to_xml__yaml__submodules", log_prints=True)
 def convert():
     print("loading from:", file_path_input)
     with open(file_path_input, "r") as fi:

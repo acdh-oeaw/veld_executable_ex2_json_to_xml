@@ -27,6 +27,7 @@ def dict_to_xml(d, node_current=None):
 
 @flow(name="veld_executable_ex2_json_to_xml__yaml__submodules", log_prints=True)
 def convert():
+    print("HIER")
     print("loading from:", file_path_input)
     with open(file_path_input, "r") as fi:
         d = json.load(fi)

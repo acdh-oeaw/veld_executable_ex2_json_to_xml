@@ -22,5 +22,5 @@ services:
     build: .
     volumes:
       - ./convert.py:/veld/executable/convert.py
-    command: python /veld/executable/convert.py
+    #command: python /veld/executable/convert.py
 
